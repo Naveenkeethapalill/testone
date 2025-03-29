@@ -1,0 +1,709 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    color: #000;
+}
+:root
+{
+  --text-color: #000;
+  --bg-color: #fff;
+  --main-color:#ffa343;
+
+  --h1-font: 6rem;
+  --h2-font:3rem;
+  --p-font:1rem:
+
+}
+body
+{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+
+}
+/*header
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    background: transparent;
+    padding: 27px 17%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+}
+.logo
+{
+    font-size: 33px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+span
+{
+  color: var(--main-color);
+}
+.navbar
+{
+    display: flex;
+}
+.navbar a
+{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin: 15px 22px;
+    transition: all .50s ease;
+}
+.navbar a:hover
+{
+    color: var(--main-color);
+}
+.h-right
+{
+    display: flex;
+    align-items: center;
+}
+.h-right a:first-child
+{
+  color: var(--text-color);
+  font-size: var(--p-font);
+  margin-right: 20px;
+}
+.h-right a
+{
+    vertical-align: middle;
+    font-size: 20px;
+    color: var(--text-color);
+    margin-right: 3px;
+    margin-left:5px;
+    transition: all .50s ease;
+}
+.h-right a:hover
+{
+    color: var(--main-color);
+    transform: translateY(-3px);
+}*/
+/* General Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff; /* Glass-like blue background */
+  backdrop-filter: blur(10px); /* Blurred effect for the glass look */
+  padding: 15px 30px;
+  position: sticky; /* Stick to the top of the page */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo img {
+  height: 60px; /* Adjust logo size */
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Space between links */
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar li a:hover {
+  color: #ffeb3b; /* Highlight link color on hover */
+}
+
+.h-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.h-right a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.h-right a:hover {
+  color: #ffeb3b; /* Highlight link color on hover */
+}
+
+#menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide navbar by default */
+    flex-direction: column; /* Stack items vertically */
+    background: #fff; /* Optional: background for dropdown */
+    width: 100%; /* Make it span the full screen width */
+    position: absolute;
+    top: 70px; /* Adjust to sit below the header */
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .navbar.show {
+    display: flex; /* Show navbar when toggled */
+  }
+
+  #menu-icon {
+    display: block; /* Show the menu icon */
+  }
+}
+
+#menu-icon
+{
+    color: var(--text-color);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+section
+{
+    padding: 70px 17% 60px;
+}
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(hero-bg.jpg);
+  background-size: cover;
+  background-position: center center; /* Centers the background image */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  text-align: center; /* Centers text content */
+  padding: 20px;
+}
+
+.home-text h1 {
+  font-size: 4rem; /* Increased font size for h1 */
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.home-text h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: var(--main-color);
+}
+
+.home-text p {
+  font-size: 22px; /* Adjusted font size for balance */
+  font-weight: 500;
+  line-height: 30px;
+  color: #ffffffab;
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 40px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-size: 16px; /* Slightly larger button font size */
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateX(10px);
+  border: 2px var(--text-color);
+  background: transparent;
+}
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .home {
+      height: auto; /* Allow content to adjust height dynamically */
+      justify-content: center; /* Center align content for smaller screens */
+      flex-direction: column; /* Stack elements vertically */
+      text-align: center; /* Center-align text */
+  }
+
+  .home-text h5 {
+      font-size: 14px; /* Smaller font size */
+  }
+
+  .home-text h1 {
+      font-size: 2rem; /* Reduce heading size */
+  }
+
+  .home-text p {
+      font-size: 16px; /* Reduce paragraph size */
+  }
+
+  .btn {
+      padding: 10px 20px; /* Adjust padding */
+      font-size: 13px; /* Smaller button text */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-text h1 {
+      font-size: 1.8rem; /* Further reduce heading size */
+  }
+
+  .home-text p {
+      font-size: 14px; /* Smaller paragraph text */
+  }
+
+  .btn {
+      font-size: 12px; /* Adjust button text size */
+      padding: 8px 15px; /* Smaller padding */
+  }
+}
+
+
+.feature-content
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+}
+.row-image
+{
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.row-image img
+{
+    width: 100%;
+    display: block;
+    transition: transform 0.7s;
+}
+.row-image img:hover
+{
+    transform: scale(1.2);
+}
+.feature-content h4
+{
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer; 
+    transition: all .50s ease;
+}
+.feature-content h4:hover
+{
+    color: var(--main-color);
+}
+.holiday {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: one wider for text, one smaller for the image */
+    align-items: center;
+    gap: 9rem;
+  }
+  
+  .holiday-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .holiday-img {
+    justify-self: center; /* Center the image horizontally within its grid area */
+  }
+  
+  .holiday-text h5 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .holiday-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .holiday-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .holiday-text .btn {
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .holiday-text .btn:hover {
+    background-color: var(--main-color);
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .holiday {
+      grid-template-columns: 1fr; /* Stack items in a single column */
+      gap: 3rem;
+      text-align: center; /* Center-align text content */
+    }
+  
+    .holiday-img, .holiday-text {
+      justify-self: center; /* Center elements within the grid */
+    }
+  }
+  /* Responsiveness for smaller screens */
+@media (max-width: 400px) {
+    .holiday {
+      grid-template-columns: 1fr; /* Stack items in a single column */
+      gap: 2rem; /* Adjust gap for smaller screens */
+      text-align: center; /* Center-align text content */
+    }
+  
+    .holiday-img, .holiday-text {
+      justify-self: center; /* Center elements horizontally within the grid */
+      align-items: center; /* Center elements vertically */
+    }
+  
+    .holiday-text {
+      margin: 0 auto; /* Ensure text is centered within its container */
+      display: flex;
+      flex-direction: column; /* Stack text content */
+    }
+  }
+  
+  .services {
+    padding: 60px 20px; /* Increased padding for more space from previous content */
+    text-align: center;
+    background-color: #fff8dc;
+  }
+  
+  .services h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    transition: color 0.5s;
+  }
+  
+  .services h1:hover {
+    color: var(--main-color); /* Change color on hover */
+  }
+  
+  .service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .service img {
+    width: 240px; /* Increased width by 40px */
+    height: 190px; /* Increased height by 40px */
+    object-fit: cover; /* Ensures the image fits within the specified dimensions */
+    border-radius: 8px; /* Keeps the rounded corners */
+  }
+  
+  
+  .service p {
+    margin-top: 10px;
+    transition: color 0.5s;
+  }
+  
+  .services p:hover {
+    color: var(--main-color); /* Change color on hover */
+  }
+  
+  
+ 
+  
+  /* Responsiveness for the title */
+  @media (max-width: 768px) {
+    .services h1 {
+      font-size: 40px; /* Adjusts font size for smaller screens */
+    }
+  }
+  /* Responsiveness for screens less than 300px */
+@media (max-width: 300px) {
+    .holiday {
+      display: flex; /* Use flexbox for centering */
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items horizontally */
+      justify-content: center; /* Center items vertically */
+      gap: 1rem; /* Spacing between elements */
+      text-align: center; /* Center-align text content */
+    }
+  
+    .holiday-img img {
+      width: 80%; /* Adjust image size for small screens */
+      height: auto;
+    }
+  
+    .holiday-text {
+      margin: 0 auto; /* Center text within its container */
+      display: flex;
+      flex-direction: column; /* Stack text elements */
+      gap: 0.5rem; /* Spacing between text elements */
+      width: 80%; /* Adjust width for small screens */
+    }
+  }
+ 
+  .gallery {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .gallery h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    transition: color 0.5s;
+  }
+  
+  .gallery h1:hover {
+    color: var(--main-color); /* Change color on hover */
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Always 4 cards per row */
+    gap: 25px; /* Increased gap between cards for spacing */
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    overflow: hidden;
+    margin: 10px; /* Reduced size of card with spacing around it */
+    padding: 10px; /* Added padding to reduce content size */
+    box-sizing: border-box; /* Ensures padding doesn't affect overall card size */
+  }
+  
+  .card img {
+    width: 100%; /* Make the image take up the card's width */
+    height: 200px; /* Set fixed height for uniformity */
+    object-fit: cover; /* Ensures the image fits within its dimensions while preserving aspect ratio */
+    border-radius: 8px; /* Adds subtle rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .card:hover img {
+    transform: scale(1.02); /* Scale image on hover */
+  }
+  
+  .rating {
+    background: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .rating span {
+    color: gold; /* Star color */
+  }
+  
+  .rating p {
+    margin: 5px 0 0;
+    color: var(--main-color);
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 1024px) {
+    .gallery-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row for medium screens */
+    }
+  
+    .card img {
+      height: 180px; /* Adjust image height for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row for small screens */
+    }
+  
+    .card img {
+      height: 160px; /* Adjust image height for small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      grid-template-columns: 1fr; /* 1 card per row for very small screens */
+    }
+  
+    .card img {
+      height: 140px; /* Adjust image height for very small screens */
+    }
+  }
+  
+
+  .map-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff8dc;
+  }
+  
+  .map-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limit max width for the map */
+    margin: 0 auto; /* Center the map */
+  }
+  
+  .map-container iframe {
+    width: 100%; /* Full width for responsiveness */
+    height: 450px; /* Default height */
+    border: 0;
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+  
+  /* Adjust height for smaller screens */
+  @media (max-width: 768px) {
+    .map-container iframe {
+      height: 350px; /* Reduced height for tablets or medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .map-container iframe {
+      height: 250px; /* Further reduced height for smartphones */
+    }
+  }
+  
+  @media (max-width: 300px) {
+    .map-section h1 {
+      font-size: 1.5rem; /* Smaller font size for tiny screens */
+    }
+    .map-container iframe {
+      height: 200px; /* Compact height for very small screens */
+    }
+  }
+
+ /* General CSS */
+.footer-section {
+  background-color: #282828; /* Softer dark background for a modern feel */
+  color: #f2f2f2; /* Slightly off-white text for better contrast */
+  padding: 30px 15px; /* Increased padding for a more spacious look */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* Center footer content */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Balance alignment */
+  align-items: flex-start;
+  gap: 60px; /* Increase space between sections */
+  margin-bottom: 30px; /* Add more space below */
+  width: 90%; /* Narrower width for better focus */
+}
+
+.footer-menu ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu ul li,
+.footer-contact ul li {
+  margin: 10px 0; /* Increase spacing between items */
+}
+
+.footer-menu ul li a,
+.footer-contact ul li a {
+  color: #f2f2f2; 
+  text-decoration: none;
+  font-size: 1.4rem; /* Moderate font size */
+  font-weight: 500; /* Slightly bold text for visibility */
+  transition: color 0.3s ease;
+}
+
+.footer-menu ul li a:hover,
+.footer-contact ul li a:hover {
+  color: #ff7f50; /* Use coral for hover effect */
+}
+
+/* Highlighted and Centered "Heaven Weddings" */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px; /* Slightly taller bottom section */
+  font-size: 3.5rem; /* Larger font for emphasis */
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #ff7f50; /* Use coral for a vibrant look */
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      gap: 25px;
+  }
+
+  .footer-menu ul li a,
+  .footer-contact ul li a {
+      font-size: 1.3rem; /* Slight reduction */
+  }
+
+  .footer-bottom {
+      font-size: 2.8rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+      gap: 15px; 
+  }
+
+  .footer-menu ul li a,
+  .footer-contact ul li a {
+      font-size: 1.1rem; 
+  }
+
+  .footer-bottom {
+      font-size: 2.5rem; 
+  }
+}
